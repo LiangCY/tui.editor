@@ -21,7 +21,8 @@ function excelTableParser(content) {
 
     if (!cols) {
       return;
-    } else if (!colLength) {
+    }
+    if (!colLength) {
       colLength = cols.length;
     }
 

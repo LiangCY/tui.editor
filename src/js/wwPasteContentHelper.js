@@ -427,8 +427,7 @@ class WwPasteContentHelper {
     const tableManager = this.wwe.componentManager.getManager('table');
 
     $container.find('table').each((index, table) => {
-      $(table).removeClass((idx, className) =>
-        className.replace(/.*\s*(te-content-table-\d+)\s*.*/, '$1'));
+      $(table).removeClass((idx, className) => className.replace(/.*\s*(te-content-table-\d+)\s*.*/, '$1'));
     });
 
     $container.find('table').each((index, table) => {
