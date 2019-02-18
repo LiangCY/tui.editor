@@ -9,5 +9,6 @@ import './extensions/scrollSync/scrollSync';
 import './extensions/table/table';
 import './extensions/colorSyntax';
 import './extensions/uml';
+import './extensions/mermaid';
 
 module.exports = Editor;

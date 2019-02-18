@@ -63,8 +63,7 @@ const defaultConfigs = Array(isDevServer ? 1 : 4).fill(0).map(() => {
           failOnWarning: false,
           failOnError: false
         }
-      },
-      {
+      }, {
         test: /\.js$/,
         exclude: /node_modules|lib|dist/,
         loader: 'babel-loader?cacheDirectory',
@@ -111,6 +110,12 @@ const defaultConfigs = Array(isDevServer ? 1 : 4).fill(0).map(() => {
         commonjs2: 'plantuml-encoder',
         amd: 'plantuml-encoder',
         root: ['plantumlEncoder']
+      },
+      'mermaid': {
+        commonjs: 'mermaid',
+        commonjs2: 'mermaid',
+        amd: 'mermaid',
+        root: ['mermaid']
       },
       'highlight.js': {
         commonjs: 'highlight.js',

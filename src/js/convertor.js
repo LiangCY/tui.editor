@@ -15,6 +15,7 @@ import blockQuote from './markdownItPlugins/markdownitBlockQuoteRenderer';
 import tableRenderer from './markdownItPlugins/markdownitTableRenderer';
 import htmlBlock from './markdownItPlugins/markdownitHtmlBlockRenderer';
 import codeBackticks from './markdownItPlugins/markdownitBackticksRenderer';
+import katex from './markdownItPlugins/markdownitKatexRenderer';
 import codeBlockManager from './codeBlockManager';
 
 const markdownitHighlight = new MarkdownIt({
@@ -47,6 +48,8 @@ markdownitHighlight.block.ruler.at('html_block', htmlBlock, {
 markdownitHighlight.inline.ruler.at('backticks', codeBackticks);
 markdownitHighlight.use(taskList);
 markdownitHighlight.use(codeBlock);
+markdownitHighlight.use(katex);
+markdownitHighlight.use(require('markdown-it-footnote'));
 
 // markdownit
 markdownit.block.ruler.at('code', code);
@@ -86,7 +89,7 @@ class Convertor {
   _markdownToHtmlWithCodeHighlight(markdown) {
     markdown = markdown.replace(/<br>/ig, '<br data-tomark-pass>');
     // eslint-disable-next-line
-        const onerrorStripeRegex = /(<img[^>]*)(onerror\s*=\s*[\"']?[^\"']*[\"']?)(.*)/i;
+    const onerrorStripeRegex = /(<img[^>]*)(onerror\s*=\s*[\"']?[^\"']*[\"']?)(.*)/i;
     while (onerrorStripeRegex.exec(markdown)) {
       markdown = markdown.replace(onerrorStripeRegex, '$1$3');
     }
@@ -108,7 +111,7 @@ class Convertor {
   _markdownToHtml(markdown) {
     markdown = markdown.replace(/<br>/ig, '<br data-tomark-pass>');
     // eslint-disable-next-line
-        const onerrorStripeRegex = /(<img[^>]*)(onerror\s*=\s*[\"']?[^\"']*[\"']?)(.*)/i;
+    const onerrorStripeRegex = /(<img[^>]*)(onerror\s*=\s*[\"']?[^\"']*[\"']?)(.*)/i;
     while (onerrorStripeRegex.exec(markdown)) {
       markdown = markdown.replace(onerrorStripeRegex, '$1$3');
     }

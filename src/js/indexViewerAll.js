@@ -8,5 +8,6 @@ import './extensions/chart/chart';
 import './extensions/table/table';
 import './extensions/colorSyntax';
 import './extensions/uml';
+import './extensions/mermaid';
 
 module.exports = EditorViewer;
