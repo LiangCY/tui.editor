@@ -111,6 +111,12 @@ const defaultConfigs = Array(isDevServer ? 1 : 4).fill(0).map(() => {
         amd: 'plantuml-encoder',
         root: ['plantumlEncoder']
       },
+      'katex': {
+        commonjs: 'katex',
+        commonjs2: 'katex',
+        amd: 'katex',
+        root: ['katex']
+      },
       'mermaid': {
         commonjs: 'mermaid',
         commonjs2: 'mermaid',
@@ -228,7 +234,7 @@ if (isDevServer) {
     'extTable': ENTRY_EXT_TABLE
   };
   defaultConfigs[2].output.libraryTarget = 'umd';
-  defaultConfigs[2].externals.push(function(context, request, callback) {
+  defaultConfigs[2].externals.push(function (context, request, callback) {
     const dir = path.relative(__dirname, context);
     if (dir.includes('extensions')) {
       if (request.match(/editor$/)) {
