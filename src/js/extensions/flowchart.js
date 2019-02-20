@@ -24,12 +24,11 @@ function flowchartExtension(editor) {
    * @returns {string} - rendered html
    */
   function flowchartReplacer(code) {
-    const randomId = `flowchart-${Math.random().toString(36).substr(2, 10)}`;
-    let renderedHTML = `<div id="${randomId}" class="flowchart" />`;
+    let renderedHTML = code;
     try {
       const diagram = flowchart.parse(code);
       diagram.drawSVG(container);
-      renderedHTML = container.firstChild.outerHTML;
+      renderedHTML = `<div class="flowchart">${container.firstChild.outerHTML}</div>`;
       if (container.children.length >= 2) {
         container.removeChild(container.firstChild);
       }
@@ -65,4 +64,3 @@ function flowchartExtension(editor) {
 Editor.defineExtension('flowchart', flowchartExtension);
 
 export default flowchartExtension;
-
