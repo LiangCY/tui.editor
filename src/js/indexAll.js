@@ -10,5 +10,6 @@ import './extensions/table/table';
 import './extensions/colorSyntax';
 import './extensions/uml';
 import './extensions/mermaid';
+import './extensions/flowchart';
 
 module.exports = Editor;

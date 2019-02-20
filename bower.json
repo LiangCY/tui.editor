@@ -54,7 +54,9 @@
     "squire-rte": "sohee-lee7/Squire#fde64d0bedb524e4495f3121dce518b94ad5852b",
     "plantuml-encoder": "^1.2.5",
     "tui-chart": "^2.13.0",
-    "katex": "^0.10.0"
+    "katex": "^0.10.0",
+    "flowchart": "^1.11.3",
+    "js-sequence-diagrams": "^2.0.1"
   },
   "resolutions": {
     "tui-code-snippet": "^1.2.9"
