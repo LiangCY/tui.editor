@@ -10,5 +10,6 @@ import './extensions/colorSyntax';
 import './extensions/uml';
 import './extensions/mermaid';
 import './extensions/flowchart';
+import './extensions/sequence';
 
 module.exports = EditorViewer;

@@ -18,8 +18,7 @@
 <div class="explain">
   All evetensions are enabled
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.10.0/flowchart.min.js"></script>
+<script src="../lib/raphael/raphael.js"></script>
 <script src="../dist/tui-editor-Editor-all.js"></script>
 <link rel="stylesheet" href="../dist/tui-editor.css">
 <link rel="stylesheet" href="../dist/tui-editor-contents.css">
@@ -35,6 +34,12 @@
     'st->op->cond',
     'cond(yes)->e',
     'cond(no)->op',
+    '```',
+    '',
+    '```sequence',
+    'Alice->Bob: Hello Bob, how are you?',
+    'Note right of Bob: Bob thinks',
+    'Bob-->Alice: I am good thanks!',
     '```'
   ].join('\n');
 
@@ -49,7 +54,8 @@
       'scrollSync',
       'mark',
       'table',
-      'flowchart'
+      'flowchart',
+      'sequence'
     ]
   });
 </script>
